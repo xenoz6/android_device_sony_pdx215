@@ -27,6 +27,16 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 IS_PHONE := true
 
+# Axion Stuff
+AXION_CAMERA_REAR_INFO := 12,12,12,0.3
+AXION_CAMERA_FRONT_INFO := 8
+AXION_MAINTAINER := Xenoz
+AXION_PROCESSOR := Snapdragon_888
+TARGET_ENABLE_BLUR := true
+TARGET_INCLUDE_AXFX := true
+TARGET_INCLUDES_LOS_PREBUILTS := true
+TARGET_NEEDS_VULKAN_MEDIA_FIX := true
+
 PRODUCT_NAME := lineage_pdx215
 PRODUCT_DEVICE := pdx215
 PRODUCT_MANUFACTURER := Sony
