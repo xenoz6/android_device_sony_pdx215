@@ -25,6 +25,19 @@
 # Inherit from sony sm8350-common
 $(call inherit-product, device/sony/sm8350-common/common.mk)
 
+# Axion Performance Mode
+PERF_GOV_SUPPORTED := true
+PERF_DEFAULT_GOV := schedutil
+
+# Axion Kernel Manager
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/kernel/ax_kernel_manager_sun.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/ax_kernel_manager.xml \
+    $(LOCAL_PATH)/rootdir/etc/ax_init_sun.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/ax_init_sun.rc
+
+# High Brightness Mode (HBM)
+HBM_SUPPORTED := true
+HBM_NODE := /sys/class/backlight/panel0-backlight/hbm_mode
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1440
